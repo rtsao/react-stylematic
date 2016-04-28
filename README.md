@@ -10,9 +10,9 @@ A [stylematic](https://github.com/rtsao/stylematic) wrapper for React
 
 ```jsx
 
-/** @jsx ReactStylematic.createElement */
+/** @jsx createElement */
 
-const ReactStylematic = require('react-stylematic'); 
+const createElement = require('react-stylematic'); 
 
 const App = () => (
   <div style={
