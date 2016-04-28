@@ -2,7 +2,6 @@
 
 var React = require('react');
 var stylematic = require('stylematic');
-var assign = require('object-assign');
 
 module.exports = function createElementStylematic(element, props) {
   // if no style prop, do nothing
@@ -12,14 +11,32 @@ module.exports = function createElementStylematic(element, props) {
 
   var result = stylematic(props.style);
   var args = Array(arguments.length);
-  var className = props.className ?
-    props.className + ' ' + result.className : result.className;
-  args[0] = element;
-  args[1] = className ? assign({}, props, {className: className}) : props;
 
-  var childrenArgs = arguments.length - 3;
-  for (var i = 0; i < childrenArgs; i++) {
+  args[0] = element;
+  args[1] = newProps(props, result.passthrough, result.className) 
+  var numChildrenArgs = arguments.length - 2;
+  for (var i = 0; i < numChildrenArgs; i++) {
     args[i + 2] = arguments[i + 2];
   }
+
   return React.createElement.apply(null, args);
+}
+
+function newProps(original, styles, className) {
+  var props = Object.keys(original).reduce(function(acc, key) {
+    if (key === 'style') {
+      if (Object.keys(styles).length) {
+        acc.style = styles;
+      }
+    } else {
+      acc[key] = original[key];
+    }
+    return acc;
+  }, {});
+
+  if (className) {
+    props.className = props.className ?
+      props.className + ' ' + className : className;
+  }
+  return props;
 }
