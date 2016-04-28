@@ -1,0 +1,26 @@
+{
+  "name": "react-stylematic",
+  "version": "0.1.0",
+  "description": "A stylematic wrapper for React",
+  "author": "Ryan Tsao <ryan.j.tsao@gmail.com>",
+  "main": "index.js",
+  "homepage": "https://github.com/rtsao/react-stylematic",
+  "repository": "git@github.com:rtsao/react-stylematic.git",
+  "bugs": "https://github.com/rtsao/react-stylematic/issues",
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "dependencies": {
+    "object-assign": "^4.0.1",
+    "stylematic": "^1.0.3"
+  },
+  "peerDependencies": {
+    "react": "0.12.x - 15.x"
+  },
+  "devDependencies": {
+    "react": "^15.0.1",
+    "styletron": "^0.2.1",
+    "tape": "^4.5.1"
+  },
+  "license": "MIT"
+}
