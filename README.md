@@ -21,7 +21,7 @@ const App = () => (
     ':hover': {
       color: ['rgba(0,75,255,0.8)', 'blue']
     }
-  }>
+  }}>
     Hello World!
   </div>
 );
