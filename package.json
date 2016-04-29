@@ -11,14 +11,14 @@
     "test": "node test/index.js"
   },
   "dependencies": {
-    "stylematic": "^1.0.3"
+    "stylematic": "^1.1.0"
   },
   "peerDependencies": {
     "react": "0.12.x - 15.x"
   },
   "devDependencies": {
     "react": "^15.0.1",
-    "styletron": "^0.2.1",
+    "styletron": "^1.0.0",
     "tape": "^4.5.1"
   },
   "license": "MIT"
