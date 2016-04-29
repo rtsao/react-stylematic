@@ -15,7 +15,7 @@ A [stylematic](https://github.com/rtsao/stylematic) wrapper for React
 const createElement = require('react-stylematic'); 
 
 const App = () => (
-  <div style={
+  <div style={{
     color: 'red',
     background: 'linear-gradient(#fff, #eee)',
     ':hover': {
