@@ -11,7 +11,7 @@
     "test": "node test/index.js"
   },
   "dependencies": {
-    "stylematic": "^1.2.0-beta.1"
+    "stylematic": "^1.2.0-beta.2"
   },
   "peerDependencies": {
     "react": "0.12.x - 15.x"
