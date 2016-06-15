@@ -1,6 +1,6 @@
 {
   "name": "react-stylematic",
-  "version": "1.1.0-beta.2",
+  "version": "1.1.0",
   "description": "A stylematic wrapper for React",
   "author": "Ryan Tsao <ryan.j.tsao@gmail.com>",
   "main": "index.js",
