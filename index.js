@@ -4,8 +4,8 @@ var React = require('react');
 var stylematic = require('stylematic');
 
 module.exports = function createElementStylematic(element, props) {
-  // if no style prop, do nothing
-  if (!props || !props.style) {
+  // if not an element or no style prop, do nothing
+  if (!props || !props.style || typeof element !== 'string') {
     return React.createElement.apply(null, arguments);
   }
 

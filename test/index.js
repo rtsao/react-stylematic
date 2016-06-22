@@ -2,9 +2,16 @@
 
 var test = require('tape');
 var styletron = require('styletron');
+var React = require('react');
 
-var createElement = require('react').createElement;
+var createElement = React.createElement;
 var createElementStylematic = require('../');
+
+var Component = React.createClass({
+  render: function() {
+    return createElement('div');
+  }
+});
 
 test('no props', function(t) {
   t.deepEqual(createElementStylematic('div'), createElement('div'));
@@ -35,5 +42,13 @@ test('style prop with passthrough and children', function(t) {
   );
   var css = styletron.flushBuffer();
   t.equal(css, '._style_3Bl7iO {\n  color: blue !important;\n  color: rgba(0,0,255,0.5) !important\n}');
+  t.end();
+});
+
+test('Component passthrough', function(t) {
+  t.deepEqual(
+    createElementStylematic(Component, {style: {color: ['red', 'blue']}}),
+    createElement(Component, {style: {color: ['red', 'blue']}})
+  );
   t.end();
 });
